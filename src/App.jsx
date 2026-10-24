@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ContenedorPrincipal from './componentes/estructura/ContenedorPrincipal';
+import PaginaCapacidades from './paginas/PaginaCapacidades';
+import PaginaArbol from './paginas/PaginaArbol';
 
 function VistaPortadaTemporal() {
   return (
@@ -25,23 +27,6 @@ function VistaPortadaTemporal() {
   );
 }
 
-function VistaCapacidadesTemporal() {
-  return (
-    <div style={{
-      padding: '2.5rem',
-      background: 'rgba(10, 17, 30, 0.75)',
-      borderRadius: '16px',
-      border: '1px solid rgba(56, 189, 248, 0.2)',
-      backdropFilter: 'blur(10px)'
-    }}>
-      <h1 style={{ color: '#38bdf8' }}>Catálogo de Capacidades Técnicas</h1>
-      <p style={{ color: '#94a3b8', marginTop: '0.5rem' }}>
-        Espacio asignado a <strong>Orlando</strong> para el catálogo JSON con buscador en vivo, filtro por categorías y panel de detalles técnicos.
-      </p>
-    </div>
-  );
-}
-
 function VistaServiciosTemporal() {
   return (
     <div style={{
@@ -54,23 +39,6 @@ function VistaServiciosTemporal() {
       <h1 style={{ color: '#38bdf8' }}>Servicios y APIs Externas</h1>
       <p style={{ color: '#94a3b8', marginTop: '0.5rem' }}>
         Espacio asignado a <strong>Guillermo</strong> para la integración asíncrona de GitHub REST API y Hacker News API con manejo de carga y errores.
-      </p>
-    </div>
-  );
-}
-
-function VistaArbolTemporal() {
-  return (
-    <div style={{
-      padding: '2.5rem',
-      background: 'rgba(10, 17, 30, 0.75)',
-      borderRadius: '16px',
-      border: '1px solid rgba(56, 189, 248, 0.2)',
-      backdropFilter: 'blur(10px)'
-    }}>
-      <h1 style={{ color: '#38bdf8' }}>Árbol de Renderizado de Componentes</h1>
-      <p style={{ color: '#94a3b8', marginTop: '0.5rem' }}>
-        Espacio asignado a <strong>Orlando</strong> para el esquema interactivo de jerarquía de componentes con nodos expandibles y colapsables.
       </p>
     </div>
   );
@@ -99,9 +67,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<ContenedorPrincipal />}>
           <Route index element={<VistaPortadaTemporal />} />
-          <Route path="capacidades" element={<VistaCapacidadesTemporal />} />
+          <Route path="capacidades" element={<PaginaCapacidades />} />
           <Route path="servicios-api" element={<VistaServiciosTemporal />} />
-          <Route path="arquitectura" element={<VistaArbolTemporal />} />
+          <Route path="arquitectura" element={<PaginaArbol />} />
           <Route path="bitacora" element={<VistaBitacoraTemporal />} />
           <Route path="*" element={<VistaPortadaTemporal />} />
         </Route>

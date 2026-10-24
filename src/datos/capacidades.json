@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cap-01",
+    "nombre": "Programación en C/C++",
+    "categoria": "Sistemas Embebidos y Hardware",
+    "tipo": "Lenguaje de programación",
+    "resumen": "Desarrollo de software de bajo y mediano nivel con estricto control de memoria y rendimiento.",
+    "descripcionDetallada": "Implementación de algoritmos deterministas, manipulación directa de registros y estructuras de datos eficientes para plataformas de computación limitada y sistemas de tiempo real.",
+    "herramientasRelacionadas": ["GCC", "Clang", "Make", "GDB"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-02",
+    "nombre": "Sistemas Embebidos",
+    "categoria": "Sistemas Embebidos y Hardware",
+    "tipo": "Disciplina de ingeniería",
+    "resumen": "Diseño e integración de microcontroladores y lógica de control para dispositivos autónomos.",
+    "descripcionDetallada": "Desarrollo de firmware sobre arquitecturas de 8 y 32 bits, gestión de interrupciones de hardware, temporizadores por hardware y manejo de protocolos de comunicación (SPI, I2C, UART).",
+    "herramientasRelacionadas": ["ESP32", "ESP8266", "AVR", "PlatformIO"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-03",
+    "nombre": "Robótica y Control Automatizado",
+    "categoria": "Sistemas Embebidos y Hardware",
+    "tipo": "Ingeniería aplicada",
+    "resumen": "Integración de actuadores, sensores y lazos de control para interacción con el entorno físico.",
+    "descripcionDetallada": "Calibración y lectura de sensores analógicos/digitales, control de potencia mediante PWM, regulación PID de actuadores mecánicos y diseño de controladores dedicados.",
+    "herramientasRelacionadas": ["Drivers de potencia", "Puentes H", "Sensores industriales"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-04",
+    "nombre": "Desarrollo de Aplicaciones Android",
+    "categoria": "Sistemas Embebidos y Hardware",
+    "tipo": "Desarrollo móvil",
+    "resumen": "Creación de software cliente y herramientas de interacción sobre el ecosistema móvil.",
+    "descripcionDetallada": "Diseño de interfaces nativas, gestión del ciclo de vida de componentes, comunicación en segundo plano y vinculación con servicios de red y periféricos locales.",
+    "herramientasRelacionadas": ["Android Studio", "Kotlin", "Java", "Gradle"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-05",
+    "nombre": "Diseño de Circuitos y Prototipado Físico",
+    "categoria": "Sistemas Embebidos y Hardware",
+    "tipo": "Hardware",
+    "resumen": "Concepción, simulación y fabricación de placas de circuitos impresos (PCB).",
+    "descripcionDetallada": "Trazado esquemático, diseño de pistas respetando normas de aislamiento y potencia, ensamble de componentes discretos y verificación de integridad de señales con instrumentación de laboratorio.",
+    "herramientasRelacionadas": ["KiCad", "Osciloscopio", "Multímetro digital"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-06",
+    "nombre": "Desarrollo de APIs REST",
+    "categoria": "Arquitectura y Backend",
+    "tipo": "Servicios web",
+    "resumen": "Construcción de interfaces de servicio basadas en el protocolo HTTP y estándar RESTful.",
+    "descripcionDetallada": "Definición de endpoints semánticos, enrutamiento jerárquico, serialización de datos en formato JSON, manejo consistente de códigos de estado HTTP y control centralizado de errores.",
+    "herramientasRelacionadas": ["Node.js", "Express", "Postman", "cURL"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-07",
+    "nombre": "Arquitectura de Middleware y Ruteo Dinámico",
+    "categoria": "Arquitectura y Backend",
+    "tipo": "Patrón de diseño",
+    "resumen": "Canalización de peticiones HTTP con capas intermedias de validación y seguridad.",
+    "descripcionDetallada": "Implementación de cadenas de middlewares para autenticación, validación de esquemas de datos entrantes, registro de auditoría (logging) y limitación de tasas de petición (rate limiting).",
+    "herramientasRelacionadas": ["Express Middleware", "Morgan", "Joi"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-08",
+    "nombre": "Comunicación en Tiempo Real y Sockets",
+    "categoria": "Arquitectura y Backend",
+    "tipo": "Protocolos de red",
+    "resumen": "Canales bidireccionales full-duplex de baja latencia para eventos en vivo.",
+    "descripcionDetallada": "Transmisión de telemetría y mensajes de sincronización continua entre el cliente y el servidor sin sobrecarga de sondeo (polling), mediante WebSockets estándar.",
+    "herramientasRelacionadas": ["WebSocket API", "Socket.IO", "TCP/IP"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-09",
+    "nombre": "Seguridad, Criptografía y Control de Acceso",
+    "categoria": "Arquitectura y Backend",
+    "tipo": "Ciberseguridad",
+    "resumen": "Protección de datos en tránsito, almacenamiento cifrado y control de identidades.",
+    "descripcionDetallada": "Implementación de tokens JWT sin estado, hashing de contraseñas con salado criptográfico (bcrypt), mitigación de ataques comunes (CORS, CSRF, inyección) y cifrado asimétrico.",
+    "herramientasRelacionadas": ["OpenSSL", "JWT", "Bcrypt", "Helmet"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-10",
+    "nombre": "Integración y Consumo de APIs Externas",
+    "categoria": "Arquitectura y Backend",
+    "tipo": "Integración de sistemas",
+    "resumen": "Interconexión de aplicaciones con servicios de terceros y fuentes de datos remotas.",
+    "descripcionDetallada": "Consumo asíncrono mediante `fetch`/HTTP clients, normalización de esquemas heterogéneos, gestión de cuotas de consumo, control de tiempos de espera (timeouts) y reintentos automáticos.",
+    "herramientasRelacionadas": ["Fetch API", "Axios", "REST Clients"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-11",
+    "nombre": "Bases de Datos Relacionales (RDBMS)",
+    "categoria": "Persistencia y Datos",
+    "tipo": "Almacenamiento estructurado",
+    "resumen": "Modelado entidad-relación formal, normalización y consultas estructuradas de alto rendimiento.",
+    "descripcionDetallada": "Diseño de esquemas relacionales, definición de claves foráneas y restricciones de integridad, transacciones ACID estrictas y optimización de planes de ejecución mediante índices.",
+    "herramientasRelacionadas": ["PostgreSQL", "MySQL", "SQLite", "DBeaver"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-12",
+    "nombre": "Bases de Datos No Relacionales (NoSQL)",
+    "categoria": "Persistencia y Datos",
+    "tipo": "Almacenamiento orientado a documentos",
+    "resumen": "Gestión de esquemas flexibles, datos jerárquicos y almacenamiento desnormalizado.",
+    "descripcionDetallada": "Diseño de colecciones de documentos JSON/BSON, pipelines de agregación multietapa, modelado de relaciones embebidas vs. referenciadas y operaciones de alta velocidad de lectura/escritura.",
+    "herramientasRelacionadas": ["MongoDB", "Redis", "Mongoose"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-13",
+    "nombre": "Patrones de Acceso a Datos (DAO y Consultas Nativas)",
+    "categoria": "Persistencia y Datos",
+    "tipo": "Patrón de arquitectura",
+    "resumen": "Separación desacoplada entre la lógica de negocio y la capa de persistencia.",
+    "descripcionDetallada": "Construcción de Data Access Objects (DAO) mediante consultas SQL explícitas y parametrizadas, evitando capas de abstracción pesadas para mantener el control granular del rendimiento.",
+    "herramientasRelacionadas": ["Native Drivers", "Prepared Statements", "Connection Pools"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-14",
+    "nombre": "Almacenamiento Clave-Valor y Caché en Memoria",
+    "categoria": "Persistencia y Datos",
+    "tipo": "Optimización de datos",
+    "resumen": "Tiempos de respuesta en sub-milisegundos para sesiones y datos de alta frecuencia.",
+    "descripcionDetallada": "Implementación de estrategias de invalidación de caché (Cache-Aside, Write-Through), contadores atómicos y gestión de estados temporales para aligerar la carga sobre el motor de base de datos primario.",
+    "herramientasRelacionadas": ["Redis", "Memcached", "In-memory maps"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-15",
+    "nombre": "Migraciones y Versionado de Esquemas",
+    "categoria": "Persistencia y Datos",
+    "tipo": "Mantenimiento de infraestructura",
+    "resumen": "Evolución controlada, reproducible y reversible de la estructura de base de datos.",
+    "descripcionDetallada": "Scripts de migración ascendentes y descendentes (up/down), asegurando consistencia entre entornos de desarrollo local, pruebas y despliegue final.",
+    "herramientasRelacionadas": ["Flyway", "Knex Migrations", "SQL Scripts"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-16",
+    "nombre": "Desarrollo con Agentes Autónomos",
+    "categoria": "Inteligencia y Nuevas Tecnologías",
+    "tipo": "Inteligencia Artificial aplicada",
+    "resumen": "Arquitectura y programación de flujos de trabajo basados en agentes autónomos.",
+    "descripcionDetallada": "Diseño de lazos de razonamiento (pensar, planificar, actuar), llamada funcional a herramientas (tool/function calling), preservación de contexto conversacional y manejo de memorias estructuradas.",
+    "herramientasRelacionadas": ["Model Context Protocol (MCP)", "LangChain", "OpenAI/Gemini APIs"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-17",
+    "nombre": "Ingeniería de Prompts y Sistemas Contextuales",
+    "categoria": "Inteligencia y Nuevas Tecnologías",
+    "tipo": "Optimización de modelos",
+    "resumen": "Formulación de directivas estructuradas, pocos disparos (few-shot) y técnicas de anclaje semántico.",
+    "descripcionDetallada": "Desarrollo de meta-prompts con roles definidos, esquemas de salida tipados (JSON Schema estricto) y minimización de alucinaciones mediante directivas de acotación explícita.",
+    "herramientasRelacionadas": ["System Prompts", "Structured Outputs", "Playgrounds"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-18",
+    "nombre": "Sistemas de Recuperación Aumentada (RAG)",
+    "categoria": "Inteligencia y Nuevas Tecnologías",
+    "tipo": "Arquitectura de información",
+    "resumen": "Conexión de modelos de lenguaje con bases de conocimiento documentales privadas.",
+    "descripcionDetallada": "Segmentación semántica de textos (chunking), generación de representaciones vectoriales (embeddings), indexación espacial y recuperación por similitud de coseno para respuestas fundamentadas.",
+    "herramientasRelacionadas": ["ChromaDB", "FAISS", "Embeddings APIs"],
+    "nivelAdopcion": "Intermedio"
+  },
+  {
+    "id": "cap-19",
+    "nombre": "Optimización y Perfilado de Algoritmos",
+    "categoria": "Inteligencia y Nuevas Tecnologías",
+    "tipo": "Algoritmos y rendimiento",
+    "resumen": "Análisis formal de complejidad temporal y espacial en procesos intensivos de cálculo.",
+    "descripcionDetallada": "Medición y reducción de notación Big-O en bucles críticos, optimización de algoritmos de ordenamiento y filtrado, y eliminación de cuellos de botella mediante profiling de CPU y memoria.",
+    "herramientasRelacionadas": ["Valgrind", "Chrome DevTools Profiler", "Node Profiler"],
+    "nivelAdopcion": "Avanzado"
+  },
+  {
+    "id": "cap-20",
+    "nombre": "Simulación Numérica y Métodos Computacionales",
+    "categoria": "Inteligencia y Nuevas Tecnologías",
+    "tipo": "Cálculo técnico",
+    "resumen": "Modelado computacional de sistemas físicos, redes de flujo y procesos estocásticos.",
+    "descripcionDetallada": "Implementación de simulaciones probabilísticas (Monte Carlo), cadenas de Markov y resolución de ecuaciones diferenciales discretizadas para proyectos de ingeniería y pronósticos.",
+    "herramientasRelacionadas": ["Python (NumPy/SciPy)", "C++", "Jupyter"],
+    "nivelAdopcion": "Avanzado"
+  }
+]
