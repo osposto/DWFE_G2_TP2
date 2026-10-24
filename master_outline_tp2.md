@@ -5,7 +5,8 @@ Este documento centraliza los requerimientos, la arquitectura de módulos en esp
 ---
 
 ## 1. Identidad del Equipo y Visión General
-- **Perfil del Equipo:** Estudio / Equipo de ingeniería y desarrollo de software y aplicaciones web, caracterizado por perfiles multidisciplinarios (desarrollo web, sistemas embebidos, arquitectura de software, bases de datos y robótica).
+- **Perfil del Equipo:** Estudio y colectivo de ingeniería de software especializado en **Ciberseguridad, Ciberdefensa, Sistemas de Control Industrial (ICS/SCADA), Sistemas Embebidos y Respuesta ante Ciberataques (SOC / Command Center)**.
+- **Concepto Visual y Temática Base:** Toda la estética y narrativa visual de la aplicación se articula en torno a la imagen de fondo técnica (`fondo-sitio.jpeg`), inspirada en operaciones de ciberseguridad industrial, monitoreo de incidentes críticos (Stuxnet, ransomware, sabotaje de centrifugadoras ICS), mapas globales de vectores de ataque y consolas de telemetría en tiempo real.
 - **Objetivo de la Aplicación:** Migrar y expandir el proyecto del TP1 hacia una Single Page Application (SPA) en **React**, gobernada por una navegación lateral persistente (**BarraLateral**), datos locales dinámicos, integración asíncrona de servicios web externos y documentación interactiva.
 - **Lineamiento de Estilos:** **CSS nativo estructurado** (archivos `.css` modulares o estándar, variables CSS en `:root`, Flexbox y CSS Grid). **No se utiliza Tailwind ni ningún framework de utilidades.**
 - **Enfoque de IA:** Asistencia documentada en diseño, arquitectura de componentes, debugging y redacción técnica, manteniendo control estricto de autoría por parte del equipo.
@@ -41,10 +42,12 @@ Estructura estandarizada con nombres en español para garantizar que los módulo
 ```text
 DWFE_G2_TP2/
 ├── public/
-│   └── datos/
-│       └── capacidades.json             # 20 registros del catálogo técnico
+│   ├── datos/
+│   │   └── capacidades.json             # 20 registros del catálogo técnico
+│   └── imagenes/
+│       └── fondo-sitio.jpeg             # Imagen de fondo base de la temática (Ciberseguridad / SOC)
 ├── src/
-│   ├── assets/                          # Recursos gráficos (avatares, logos, íconos)
+│   ├── assets/                          # Recursos gráficos (avatares, logos, fondo-sitio.jpeg)
 │   ├── componentes/
 │   │   ├── comunes/
 │   │   │   ├── Cargando.jsx             # Componente de estado de carga
@@ -129,7 +132,17 @@ Para que el trabajo independiente de cada integrante encaje de manera inmediata 
   - **Rutas asociadas:** `/capacidades`, `/arquitectura`, `*`
 
 ### 4.2. Responsable 2: Adriana (Diseño UI/UX, Portada y Perfiles)
-* **Objetivo:** Garantizar la identidad gráfica de nivel "Supera", la presentación atractiva del equipo y las fichas de integrantes con interacción dinámica.
+* **Objetivo:** Garantizar la identidad gráfica de nivel "Supera", alineada con la temática de ciberseguridad industrial y el fondo visual (`fondo-sitio.jpeg`), la presentación atractiva del equipo y las fichas de integrantes con interacción dinámica.
+* **Pautas de Diseño y Paleta Temática (Criterio 09 - Nivel Supera):**
+  - **Fondo General del Sitio:** Fijado globalmente sobre `body` con la imagen `/imagenes/fondo-sitio.jpeg` y una sobrecapa (overlay) oscura semitransparente con gradiente para garantizar contraste y legibilidad impecables.
+  - **Paleta de Color en `variables.css`:**
+    - Fondo de paneles y tarjetas: `rgba(10, 17, 30, 0.85)` con `backdrop-filter: blur(10px)` (efecto vidrio esmerilado / glassmorphism técnico).
+    - Bordes de tarjetas y contenedores: `rgba(56, 189, 248, 0.2)` con brillo sutil en hover.
+    - Acento primario (radar cian / HUD): `#00f0ff` y `#38bdf8`.
+    - Acento de advertencia industrial (hazard / radiación): `#f59e0b` y `#fbbf24`.
+    - Acento de alerta crítica: `#ef4444` y `#ff2a4b`.
+    - Acento de estado seguro / terminal: `#10b981`.
+  - **Tipografía:** `'Inter'` para textos de lectura y `'JetBrains Mono'` / `'Fira Code'` para códigos, badges técnicos y métricas.
 * **Archivos asignados:**
   - `src/estilos/variables.css` (variables CSS `:root`: paleta, fuentes, gradientes, radios, sombras)
   - `src/estilos/global.css` (estilos base globales)

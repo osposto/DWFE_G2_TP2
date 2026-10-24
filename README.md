@@ -23,7 +23,9 @@ Aplicación web Single Page Application (SPA) desarrollada con **React** y **Vit
 
 ## 🎯 Descripción del Proyecto
 
-El proyecto constituye la evolución del TP1, transformando un sitio web estático en una **SPA interactiva, reactiva y accesible** gobernada por React 18 y React Router v6. 
+El proyecto constituye la evolución del TP1, transformando un sitio web estático en una **SPA interactiva, reactiva y accesible** gobernada por React 18 y React Router v6.
+
+La propuesta conceptual y gráfica del equipo se sitúa en el ámbito de la **Ciberseguridad, Ciberdefensa, Sistemas de Control Industrial (ICS/SCADA) y Sistemas Embebidos**, estructurada en torno a una imagen de fondo técnica panorámica (`fondo-sitio.jpeg`) que evoca una consola de mando / SOC (Security Operations Center) con telemetría en tiempo real, alertas de incidentes críticos y vectores de mitigación.
 
 La aplicación se organiza a través de una barra lateral de navegación persistente (**BarraLateral**) y contempla 6 vistas internas principales:
 - **Portada del Equipo:** Presentación colectiva, métricas dinámicas y accesos a perfiles (`/`).
@@ -65,10 +67,12 @@ Para reflejar con claridad el aporte y la autoría de cada miembro en el histori
 ```text
 DWFE_G2_TP2/
 ├── public/
-│   └── datos/
-│       └── capacidades.json             # 20 registros del catálogo técnico
+│   ├── datos/
+│   │   └── capacidades.json             # 20 registros del catálogo técnico
+│   └── imagenes/
+│       └── fondo-sitio.jpeg             # Imagen de fondo temático (Ciberseguridad / SOC)
 ├── src/
-│   ├── assets/                          # Recursos gráficos (avatares, logos)
+│   ├── assets/                          # Recursos gráficos (avatares, fondo-sitio.jpeg)
 │   ├── componentes/
 │   │   ├── comunes/
 │   │   │   ├── Cargando.jsx             # Estado de carga reutilizable
