@@ -22,7 +22,12 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0b1220 0%, #111827 50%, #1e293b 100%);
+  background-color: #060a12;
+  background-image: linear-gradient(rgba(6, 10, 18, 0.82), rgba(6, 10, 18, 0.92)), url('/imagenes/fondo-sitio.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f1f5f9;
 }
 
 button {

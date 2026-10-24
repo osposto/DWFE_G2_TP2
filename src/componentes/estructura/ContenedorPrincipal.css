@@ -1,0 +1,104 @@
+:root {
+  --ancho-barra-lateral-colapsada: 74px;
+  --ancho-barra-lateral-expandida: 270px;
+  --ancho-barra-lateral: var(--ancho-barra-lateral-colapsada);
+}
+
+.estructura-raiz {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.estructura-raiz.sidebar-colapsada {
+  --ancho-barra-lateral: var(--ancho-barra-lateral-colapsada);
+}
+
+.estructura-raiz.sidebar-expandida {
+  --ancho-barra-lateral: var(--ancho-barra-lateral-expandida);
+}
+
+.contenido-principal-layout {
+  flex: 1;
+  margin-left: var(--ancho-barra-lateral);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+  transition: margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cabecera-movil {
+  display: none;
+  height: var(--alto-encabezado-movil, 60px);
+  background: rgba(10, 17, 30, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 0 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.boton-hamburguesa {
+  font-size: 1.4rem;
+  color: var(--color-primario, #38bdf8);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.18s ease;
+}
+
+.boton-hamburguesa:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.titulo-cabecera-movil {
+  font-weight: 700;
+  color: var(--color-primario, #38bdf8);
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+}
+
+.contenedor-pagina {
+  flex: 1;
+  padding: 2.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.telon-fondo {
+  display: none;
+}
+
+/* Modo responsivo para móviles y tablets (< 768px) */
+@media (max-width: 768px) {
+  .contenido-principal-layout {
+    margin-left: 0 !important;
+  }
+
+  .cabecera-movil {
+    display: flex;
+  }
+
+  .telon-fondo.abierto {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 90;
+  }
+
+  .contenedor-pagina {
+    padding: 1.5rem 1rem;
+  }
+}
