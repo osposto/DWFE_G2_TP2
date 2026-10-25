@@ -1,4 +1,4 @@
-# DWFE · Grupo 2 · Trabajo Práctico 2 (React)
+# 200 - OK · Trabajo Práctico 2 (React)
 
 Aplicación web Single Page Application (SPA) desarrollada con **React** y **Vite**, que presenta la identidad del equipo de desarrollo, gestiona un catálogo dinámico de capacidades técnicas, integra servicios web externos en tiempo real y documenta la arquitectura y bitácora del proyecto.
 
@@ -44,7 +44,7 @@ Para garantizar una participación equitativa, modular y verificable, las exigen
 | Integrante | Rol en el Proyecto | Perfil GitHub | Módulos y Responsabilidades Técnicas Asumidas |
 |---|---|---|---|
 | **Orlando S.** *(Coordinador)* | **Arquitectura de Software y Lógica de Datos** | [@osposto](https://github.com/osposto) | • Configuración inicial del entorno (Vite, React Router v6, `vercel.json` para rutas SPA).<br>• Estructura maestra (`ContenedorPrincipal.jsx`) y Barra Lateral persistente (`BarraLateral.jsx`) con drawer móvil responsivo.<br>• Módulo de Datos Locales JSON (`PaginaCapacidades.jsx`, `TarjetaCapacidad.jsx`, `BarraBusqueda.jsx`, `FiltroCategoria.jsx`): catálogo dinámico, búsqueda textual y filtrado.<br>• Componente del Árbol de Renderizado interactivo (`PaginaArbol.jsx`, `NodoArbol.jsx`) con ramas colapsables.<br>• Vista de error amigable (`PaginaNoEncontrada.jsx`) y gestión de despliegue en Vercel. |
-| **Adriana** | **Diseño UI/UX, Estética y Perfiles de Usuario** | [@adriana](https://github.com) *(completar usuario)* | • Propuesta estética integral del sitio (Nivel `Supera`): definición de paleta cromática, variables CSS en `:root` (`variables.css`), tipografías y composición general.<br>• Portada del equipo (`PaginaInicio.jsx`): Hero section, panel interactivo de estadísticas colectivas y maquetación de tarjetas.<br>• Módulo de Perfiles en React (`PaginaPerfil.jsx`, `DetalleIntegrante.jsx`, `TarjetaIntegrante.jsx`): diseño y maquetación de las vistas individuales de los 3 integrantes.<br>• Implementación de interacción funcional propia en cada perfil: selector interactivo de pestañas (Stack tecnológico, Intereses culturales, Responsabilidad técnica).<br>• Base de datos de integrantes (`datosIntegrantes.js`) y auditoría de accesibilidad visual y contraste. |
+| **Adriana** | **Diseño UI/UX, Estética y Perfiles de Usuario** | No informado | • Propuesta estética integral del sitio: definición de paleta cromática, variables CSS en `:root` (`variables.css`), tipografías y composición general.<br>• Portada del equipo (`PaginaInicio.jsx`): presentación, estadísticas colectivas y tarjetas de integrantes.<br>• Módulo de perfiles en React (`PaginaPerfil.jsx`, `DetalleIntegrante.jsx`, `TarjetaIntegrante.jsx`): vistas individuales con fotos y datos personales.<br>• Pestañas interactivas para habilidades, películas favoritas, discos favoritos y responsabilidades; las películas abren fichas modales con afiche, año, dirección y sinopsis.<br>• Datos e imágenes de los integrantes (`datosIntegrantes.js` y `src/assets/integrantes/`). |
 | **Guillermo** | **Integración de APIs Asíncronas, Bitácora y Documentación** | [@guillermo](https://github.com) *(completar usuario)* | • Módulo de Servicios Web y APIs Externas (`PaginaServicios.jsx`, `SeccionServicios.jsx`, `PestanaGithub.jsx`, `PestanaHackerNews.jsx`): integración asíncrona de GitHub REST API y Hacker News API.<br>• Manejo explícito de estados de red: componentes reutilizables de carga (`Cargando.jsx`), fallo con reintento (`MensajeError.jsx`) y botones de refresco.<br>• Módulo de Bitácora del Proyecto (`PaginaBitacora.jsx`, `datosBitacora.js`): recolección de hitos técnicos, dificultades superadas y maquetación en acordeones interactivos colapsables.<br>• Redacción técnica y mantenimiento del `README.md` (índice, tabla de roles, tabla de IA y capturas del proyecto). |
 
 ---
@@ -72,7 +72,9 @@ DWFE_G2_TP2/
 │   └── imagenes/
 │       └── fondo-sitio.jpeg             # Imagen de fondo temático (Ciberseguridad / SOC)
 ├── src/
-│   ├── assets/                          # Recursos gráficos (avatares, fondo-sitio.jpeg)
+│   ├── assets/                          # Recursos gráficos de la aplicación
+│   │   ├── fondo-sitio.jpeg
+│   │   └── integrantes/                 # Fotos, afiches y portadas de música
 │   ├── componentes/
 │   │   ├── comunes/
 │   │   │   ├── Cargando.jsx             # Estado de carga reutilizable
@@ -162,7 +164,7 @@ Cumpliendo rigurosamente con los **Criterios 15** y **03** (nivel `Propone`), se
 | Integrante | Entorno / Aplicación | Modelo de IA Empleado | Contenido / Tareas Específicas Asistidas |
 |---|---|---|---|
 | **Orlando S.** | Antigravity IDE / VS Code | Gemini 3.8 Flash / Claude 3.5 Sonnet | • Asistencia en la arquitectura de componentes y configuración de rutas anidadas con React Router.<br>• Generación del esquema de datos para `capacidades.json` respetando las 4 categorías equilibradas.<br>• Programación de la lógica del árbol jerárquico colapsable (`NodoArbol.jsx`). |
-| **Adriana** | ChatGPT / Perplexity | GPT-4o | • Exploración de paleta cromática armónica y sistema de contraste accesible.<br>• Redacción de biografías profesionales y estructura de datos de gustos culturales para los perfiles.<br>• Generación de ideas para los componentes interactivos de cada perfil (tabs dinámicos). |
+| **Adriana** | ChatGPT / Perplexity | GPT-4o | • Exploración de paleta cromática armónica y sistema de contraste accesible.<br>• Organización de la información de los perfiles y sus datos de habilidades, películas y música.<br>• Generación de ideas para los componentes interactivos de cada perfil (pestañas dinámicas). |
 | **Guillermo** | VS Code / Copilot | Claude 3.5 Sonnet | • Asistencia en la lógica asíncrona de `fetch` con manejo concurrente (`Promise.all`) para los ítems de Hacker News.<br>• Estructuración del manejo defensivo de errores HTTP y estados de carga.<br>• Redacción de los registros cronológicos y lecciones aprendidas de la bitácora técnica. |
 
 ---

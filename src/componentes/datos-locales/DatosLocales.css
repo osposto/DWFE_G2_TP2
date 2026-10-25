@@ -18,7 +18,7 @@
 .icono-busqueda {
   position: absolute;
   left: 1rem;
-  color: #64748b;
+  color: var(--color-texto-suave, #94a3b8);
   font-size: 0.95rem;
   pointer-events: none;
 }
@@ -26,10 +26,10 @@
 .input-busqueda {
   width: 100%;
   padding: 0.75rem 2.5rem 0.75rem 2.6rem;
-  background: rgba(10, 17, 30, 0.85);
+  background: var(--color-panel, rgba(10, 17, 30, 0.85));
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 8px;
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.25));
+  border-radius: var(--radius-md, 4px);
   color: #f1f5f9;
   font-size: 0.92rem;
   font-family: inherit;
@@ -38,7 +38,7 @@
 
 .input-busqueda:focus {
   outline: none;
-  border-color: #38bdf8;
+  border-color: var(--color-primario, #38bdf8);
   box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
 }
 
@@ -78,10 +78,10 @@
 
 .selector-categoria {
   padding: 0.75rem 1.25rem 0.75rem 2.6rem;
-  background: rgba(10, 17, 30, 0.85);
+  background: var(--color-panel, rgba(10, 17, 30, 0.85));
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 8px;
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.25));
+  border-radius: var(--radius-md, 4px);
   color: #f1f5f9;
   font-size: 0.92rem;
   font-family: inherit;
@@ -91,7 +91,7 @@
 
 .selector-categoria:focus {
   outline: none;
-  border-color: #38bdf8;
+  border-color: var(--color-primario, #38bdf8);
   box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
 }
 
@@ -104,7 +104,7 @@
   padding: 0.75rem 1.25rem;
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.35);
-  border-radius: 8px;
+  border-radius: var(--radius-md, 4px);
   color: #fca5a5;
   font-weight: 600;
   font-size: 0.88rem;
@@ -147,10 +147,10 @@
 }
 
 .tarjeta-capacidad {
-  background: rgba(10, 17, 30, 0.82);
+  background: var(--color-panel, rgba(10, 17, 30, 0.82));
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(56, 189, 248, 0.18);
-  border-radius: 14px;
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.18));
+  border-radius: var(--radius-md, 4px);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -175,7 +175,7 @@
 .insignia-categoria {
   display: inline-block;
   padding: 0.25rem 0.65rem;
-  border-radius: 999px;
+  border-radius: var(--radius-sm, 2px);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -196,9 +196,9 @@
 }
 
 .categoria-datos {
-  background: rgba(167, 139, 250, 0.12);
-  color: #a78bfa;
-  border: 1px solid rgba(167, 139, 250, 0.3);
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--color-warning-2, #fbbf24);
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .categoria-inteligencia {
@@ -232,7 +232,7 @@
   padding: 0.55rem 0.95rem;
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 6px;
+  border-radius: var(--radius-md, 4px);
   color: #38bdf8;
   font-size: 0.82rem;
   font-weight: 600;

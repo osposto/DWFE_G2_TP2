@@ -3,29 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ContenedorPrincipal from './componentes/estructura/ContenedorPrincipal';
 import PaginaCapacidades from './paginas/PaginaCapacidades';
 import PaginaArbol from './paginas/PaginaArbol';
-
-function VistaPortadaTemporal() {
-  return (
-    <div style={{
-      textAlign: 'center',
-      padding: '4rem 1.5rem',
-      background: 'rgba(10, 17, 30, 0.75)',
-      borderRadius: '16px',
-      border: '1px solid rgba(56, 189, 248, 0.2)',
-      backdropFilter: 'blur(10px)'
-    }}>
-      <span style={{ color: '#38bdf8', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-        DWFE · Trabajo Práctico 2 (React)
-      </span>
-      <h1 style={{ fontSize: '2.4rem', margin: '1rem 0', color: '#f1f5f9' }}>
-        Centro de Operaciones y Desarrollo Front-End
-      </h1>
-      <p style={{ maxWidth: '650px', margin: '0 auto', color: '#94a3b8', lineHeight: '1.7' }}>
-        Estructura base y barra lateral persistente configuradas. Espacio listo para la maquetación de la Portada, Hero section y presentación interactiva de integrantes (Responsabilidad de Adriana).
-      </p>
-    </div>
-  );
-}
+import PaginaInicio from './paginas/PaginaInicio';
+import PaginaPerfil from './paginas/PaginaPerfil';
 
 function VistaServiciosTemporal() {
   return (
@@ -66,12 +45,13 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<ContenedorPrincipal />}>
-          <Route index element={<VistaPortadaTemporal />} />
+          <Route index element={<PaginaInicio />} />
+          <Route path="perfil/:id" element={<PaginaPerfil />} />
           <Route path="capacidades" element={<PaginaCapacidades />} />
           <Route path="servicios-api" element={<VistaServiciosTemporal />} />
           <Route path="arquitectura" element={<PaginaArbol />} />
           <Route path="bitacora" element={<VistaBitacoraTemporal />} />
-          <Route path="*" element={<VistaPortadaTemporal />} />
+          <Route path="*" element={<PaginaInicio />} />
         </Route>
       </Routes>
     </BrowserRouter>

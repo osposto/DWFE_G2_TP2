@@ -1,0 +1,26 @@
+:root {
+  --font-ui: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --fuente-base: var(--font-ui);
+  --color-bg: #050b14;
+  --color-bg-strong: #0b1220;
+  --color-panel: rgba(10, 17, 30, 0.86);
+  --color-panel-soft: rgba(10, 17, 30, 0.68);
+  --color-panel-strong: rgba(5, 11, 20, 0.96);
+  --color-borde: rgba(56, 189, 248, 0.24);
+  --color-borde-strong: rgba(125, 211, 252, 0.52);
+  --color-primario: #38bdf8;
+  --color-primario-2: #00f0ff;
+  --color-warning: #f59e0b;
+  --color-warning-2: #fbbf24;
+  --color-alerta: #ef4444;
+  --color-alerta-2: #ff2a4b;
+  --color-estado: #10b981;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --shadow-glass: 0 28px 60px rgba(2, 6, 23, 0.5);
+  --radius-xl: 8px;
+  --radius-lg: 6px;
+  --radius-md: 4px;
+  --radius-sm: 2px;
+}

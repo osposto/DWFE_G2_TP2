@@ -1,8 +1,8 @@
 .contenedor-arbol-interactivo {
-  background: rgba(10, 17, 30, 0.82);
+  background: var(--color-panel, rgba(10, 17, 30, 0.82));
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(56, 189, 248, 0.22);
-  border-radius: 14px;
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.22));
+  border-radius: var(--radius-md, 4px);
   padding: 1.75rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
@@ -42,7 +42,7 @@
   padding: 0.45rem 0.9rem;
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 6px;
+  border-radius: var(--radius-md, 4px);
   color: #38bdf8;
   font-size: 0.8rem;
   font-weight: 600;
@@ -105,7 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #475569;
+  color: var(--color-texto-suave, #94a3b8);
   font-size: 0.75rem;
   flex-shrink: 0;
 }
@@ -155,9 +155,9 @@
 }
 
 .tipo-servicio {
-  background: rgba(167, 139, 250, 0.15);
-  color: #a78bfa;
-  border: 1px solid rgba(167, 139, 250, 0.35);
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--color-alerta-2, #ff2a4b);
+  border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
 .descripcion-nodo {
