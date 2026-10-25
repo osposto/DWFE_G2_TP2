@@ -7,6 +7,7 @@ import PaginaCapacidades from './paginas/PaginaCapacidades';
 import PaginaServicios from './paginas/PaginaServicios';
 import PaginaArbol from './paginas/PaginaArbol';
 import PaginaBitacora from './paginas/PaginaBitacora';
+import PaginaNoEncontrada from './paginas/PaginaNoEncontrada';
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
           <Route path="servicios-api" element={<PaginaServicios />} />
           <Route path="arquitectura" element={<PaginaArbol />} />
           <Route path="bitacora" element={<PaginaBitacora />} />
-          <Route path="*" element={<PaginaInicio />} />
+          <Route path="*" element={<PaginaNoEncontrada />} />
         </Route>
       </Routes>
     </BrowserRouter>
