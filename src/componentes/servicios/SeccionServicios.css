@@ -1,0 +1,935 @@
+/* ==========================================================================
+   ESTILOS DE SERVICIOS API, ESTADOS DE RED Y BITÁCORA (Integrante 3: Guillermo)
+   Alineado con variables.css y global.css (Identidad 200 - OK)
+   ========================================================================== */
+
+/* --- 1. Contenedor y Pestañas de Servicios (SeccionServicios.jsx) --- */
+.seccion-servicios-contenedor {
+  background: var(--color-panel, rgba(10, 17, 30, 0.86));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-radius: var(--radius-md, 4px);
+  overflow: hidden;
+  box-shadow: var(--shadow-glass, 0 28px 60px rgba(2, 6, 23, 0.5));
+}
+
+.barra-pestanas-servicios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--color-panel-strong, rgba(5, 11, 20, 0.96));
+  border-bottom: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  padding: 0.65rem;
+  gap: 0.65rem;
+}
+
+button.boton-pestana-servicio {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.95rem 1.25rem;
+  border-radius: var(--radius-md, 4px);
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: var(--color-texto-suave, #94a3b8);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.boton-pestana-servicio:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  color: var(--color-texto, #e2e8f0);
+}
+
+button.boton-pestana-servicio.activa {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.18), rgba(37, 99, 235, 0.16));
+  border-color: var(--color-primario, #38bdf8);
+  border-top: 2px solid var(--color-primario-2, #00f0ff);
+  color: var(--color-texto, #e2e8f0);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.18);
+}
+
+.icono-pestana-servicio {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.textos-pestana-servicio {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.titulo-pestana-servicio {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.subtitulo-pestana-servicio {
+  font-size: 0.76rem;
+  color: var(--color-texto-suave, #94a3b8);
+  margin-top: 0.15rem;
+}
+
+.badge-protocolo-servicio {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-sm, 2px);
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--color-primario-2, #00f0ff);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.3));
+  white-space: nowrap;
+}
+
+.cuerpo-seccion-servicios {
+  padding: 1.75rem;
+}
+
+/* --- 2. Caja de Contexto de API y Controles Superiores --- */
+.caja-contexto-api {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 1.15rem 1.35rem;
+  background: rgba(5, 11, 20, 0.78);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-left: 3px solid var(--color-primario-2, #00f0ff);
+  border-radius: var(--radius-md, 4px);
+  margin-bottom: 1.5rem;
+}
+
+.contexto-api-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.badge-endpoint {
+  display: inline-block;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-estado, #10b981);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm, 2px);
+  margin-bottom: 0.55rem;
+}
+
+.texto-contexto-api {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-texto, #e2e8f0);
+  line-height: 1.65;
+}
+
+.acciones-rapidas-api {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button.boton-refrescar-api {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 38px;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md, 4px);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  color: var(--color-primario-2, #00f0ff);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+button.boton-refrescar-api:hover:not(:disabled) {
+  background: rgba(56, 189, 248, 0.24);
+  border-color: var(--color-primario-2, #00f0ff);
+  color: #ffffff;
+}
+
+button.boton-simular-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 38px;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-md, 4px);
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: var(--color-warning-2, #fbbf24);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+button.boton-simular-error:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.24);
+  border-color: var(--color-warning-2, #fbbf24);
+  color: #ffffff;
+}
+
+/* --- 3. Barra de Cuentas y Buscador de GitHub --- */
+.barra-explorador-github,
+.barra-canales-hn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+}
+
+.chips-perfiles-sugeridos {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.etiqueta-sugeridos {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--color-texto-suave, #94a3b8);
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+button.chip-perfil-btn {
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm, 2px);
+  background: rgba(5, 11, 20, 0.85);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  color: var(--color-texto, #e2e8f0);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+button.chip-perfil-btn:hover {
+  border-color: var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  color: #ffffff;
+}
+
+button.chip-perfil-btn.activo {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: var(--color-primario-2, #00f0ff);
+  color: var(--color-primario-2, #00f0ff);
+}
+
+.chip-sub {
+  font-weight: 400;
+  opacity: 0.8;
+  font-size: 0.68rem;
+}
+
+.formulario-usuario-github {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-usuario-github {
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-md, 4px);
+  background: var(--color-panel-strong, rgba(5, 11, 20, 0.96));
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  color: var(--color-texto, #e2e8f0);
+  font-size: 0.85rem;
+  min-width: 210px;
+}
+
+.input-usuario-github:focus {
+  outline: none;
+  border-color: var(--color-primario-2, #00f0ff);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.22);
+}
+
+button.boton-consultar-usuario {
+  min-height: 38px;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md, 4px);
+  background: var(--color-primario, #38bdf8);
+  color: #04111b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid var(--color-primario, #38bdf8);
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+button.boton-consultar-usuario:hover:not(:disabled) {
+  background: var(--color-primario-2, #00f0ff);
+}
+
+/* --- 4. Perfil y Tarjetas de Repositorios de GitHub --- */
+.Resumen-perfil-github {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.2rem;
+  background: rgba(5, 11, 20, 0.83);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-top: 2px solid var(--color-primario, #38bdf8);
+  border-radius: var(--radius-md, 4px);
+  margin-bottom: 1.5rem;
+}
+
+.avatar-github-api {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 1px solid var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.datos-principales-github {
+  flex: 1;
+  min-width: 0;
+}
+
+.fila-nombre-github {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.fila-nombre-github h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-texto, #e2e8f0);
+}
+
+.enlace-perfil-externo {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  color: var(--color-primario-2, #00f0ff);
+  text-decoration: none;
+}
+
+.enlace-perfil-externo:hover {
+  text-decoration: underline;
+}
+
+.bio-github-api {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 0.86rem;
+  color: var(--color-texto-suave, #94a3b8);
+}
+
+.metricas-github-api {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--color-texto-suave, #94a3b8);
+}
+
+.metricas-github-api strong {
+  color: var(--color-texto, #e2e8f0);
+}
+
+.marca-tiempo-api {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  color: var(--color-estado, #10b981);
+}
+
+.grilla-repositorios-github,
+.grilla-noticias-hn {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta-repo-github,
+.tarjeta-noticia-hn {
+  background: rgba(5, 11, 20, 0.83);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-top: 2px solid var(--color-primario, #38bdf8);
+  border-radius: var(--radius-md, 4px);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-repo-github:hover,
+.tarjeta-noticia-hn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}
+
+.cabecera-tarjeta-repo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.titulo-repo-enlace {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primario-2, #00f0ff);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.titulo-repo-enlace:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.descripcion-repo {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave, #94a3b8);
+  line-height: 1.6;
+  margin: 0 0 1.1rem;
+  flex: 1;
+}
+
+.pie-tarjeta-repo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-borde, rgba(56, 189, 248, 0.24));
+  font-size: 0.75rem;
+  color: var(--color-texto-suave, #94a3b8);
+}
+
+.badge-lenguaje-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--color-texto, #e2e8f0);
+  font-weight: 600;
+}
+
+.punto-lenguaje {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primario-2, #00f0ff);
+}
+
+.estadisticas-repo {
+  display: flex;
+  gap: 0.65rem;
+}
+
+/* --- 5. Tarjetas de Hacker News (PestanaHackerNews.jsx) --- */
+.cabecera-noticia-hn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+}
+
+.numero-orden-hn {
+  color: var(--color-primario-2, #00f0ff);
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm, 2px);
+}
+
+.dominio-noticia-hn {
+  color: var(--color-texto-suave, #94a3b8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.puntaje-noticia-hn {
+  color: var(--color-warning-2, #fbbf24);
+  font-weight: 700;
+  background: rgba(251, 191, 36, 0.12);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm, 2px);
+}
+
+.titulo-noticia-hn {
+  margin: 0 0 1rem;
+  font-size: 0.96rem;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.enlace-titulo-hn {
+  color: var(--color-texto, #e2e8f0);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.enlace-titulo-hn:hover {
+  color: var(--color-primario-2, #00f0ff);
+}
+
+.pie-noticia-hn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-borde, rgba(56, 189, 248, 0.24));
+  font-size: 0.75rem;
+  color: var(--color-texto-suave, #94a3b8);
+}
+
+.meta-noticia-hn {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.enlaces-noticia-hn {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.enlace-discusion-hn,
+.enlace-abrir-fuente {
+  color: var(--color-primario-2, #00f0ff);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.enlace-discusion-hn:hover,
+.enlace-abrir-fuente:hover {
+  text-decoration: underline;
+}
+
+/* --- 6. Estados Reutilizables: Cargando.jsx y MensajeError.jsx --- */
+.estado-cargando-contenedor {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: rgba(5, 11, 20, 0.75);
+  border: 1px dashed var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  border-radius: var(--radius-md, 4px);
+  margin: 1rem 0;
+}
+
+.spinner-radar-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-radar-anillo {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(56, 189, 248, 0.18);
+  border-top-color: var(--color-primario-2, #00f0ff);
+  border-radius: 50%;
+  animation: giroRadar 1s linear infinite;
+}
+
+.spinner-radar-icono {
+  font-size: 1.5rem;
+}
+
+@keyframes giroRadar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.etiqueta-estado-red {
+  display: inline-block;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primario-2, #00f0ff);
+  margin-bottom: 0.4rem;
+}
+
+.mensaje-estado-cargando {
+  color: var(--color-texto, #e2e8f0);
+  font-size: 0.92rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.estado-error-contenedor {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: rgba(30, 10, 18, 0.82);
+  border: 1px solid var(--color-alerta, #ef4444);
+  border-top: 2px solid var(--color-alerta-2, #ff2a4b);
+  border-radius: var(--radius-md, 4px);
+  margin: 1rem 0;
+}
+
+.icono-alerta-error {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.insignia-alerta-red {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm, 2px);
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.titulo-estado-error {
+  color: var(--color-texto, #e2e8f0);
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.detalle-estado-error {
+  color: #fecaca;
+  max-width: 560px;
+  margin: 0 auto 1.4rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+button.boton-reintentar-consulta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md, 4px);
+  background: var(--color-alerta, #ef4444);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.86rem;
+  border: 1px solid var(--color-alerta-2, #ff2a4b);
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+button.boton-reintentar-consulta:hover {
+  background: var(--color-alerta-2, #ff2a4b);
+}
+
+/* --- 7. Bitácora Interactiva con Acordeones (PaginaBitacora.jsx) --- */
+.panel-controles-bitacora {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.1rem 1.35rem;
+  background: var(--color-panel, rgba(10, 17, 30, 0.86));
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-radius: var(--radius-md, 4px);
+  margin-bottom: 1.25rem;
+}
+
+.grupo-filtros-bitacora {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.selector-filtro-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.etiqueta-filtro-bitacora {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-texto-suave, #94a3b8);
+  font-weight: 700;
+}
+
+.select-bitacora {
+  padding: 0.55rem 0.9rem;
+  background: var(--color-panel-strong, rgba(5, 11, 20, 0.96));
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-radius: var(--radius-md, 4px);
+  color: var(--color-texto, #e2e8f0);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.select-bitacora option {
+  background: #0b1220;
+  color: #f1f5f9;
+}
+
+button.boton-limpiar-bitacora {
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-md, 4px);
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botones-expansion-bitacora {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button.boton-accion-bitacora {
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-md, 4px);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.28));
+  color: var(--color-primario-2, #00f0ff);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.boton-accion-bitacora:hover {
+  background: rgba(56, 189, 248, 0.22);
+  color: #ffffff;
+}
+
+.barra-resumen-bitacora {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.84rem;
+  color: var(--color-texto-suave, #94a3b8);
+  padding: 0 0.25rem;
+}
+
+.lista-acordeones-bitacora {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.acordeon-bitacora-item {
+  background: rgba(5, 11, 20, 0.83);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.24));
+  border-top: 2px solid var(--color-primario, #38bdf8);
+  border-radius: var(--radius-md, 4px);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.acordeon-bitacora-item.abierto {
+  border-color: var(--color-borde-strong, rgba(125, 211, 252, 0.52));
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+button.acordeon-bitacora-cabecera {
+  width: 100%;
+  text-align: left;
+  padding: 1.3rem 1.45rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--color-texto, #e2e8f0);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+button.acordeon-bitacora-cabecera:hover {
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.acordeon-bitacora-meta-superior {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+}
+
+.fecha-bitacora {
+  color: var(--color-texto-suave, #94a3b8);
+}
+
+.categoria-bitacora-badge {
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-sm, 2px);
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--color-primario-2, #00f0ff);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.3));
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.autor-bitacora-badge {
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-sm, 2px);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.autor-orlando {
+  background: rgba(251, 191, 36, 0.14);
+  color: var(--color-warning-2, #fbbf24);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.autor-adriana {
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--color-primario, #38bdf8);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.autor-guillermo {
+  background: rgba(16, 185, 129, 0.14);
+  color: var(--color-estado, #10b981);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.acordeon-bitacora-fila-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titulo-entrada-bitacora {
+  margin: 0;
+  font-size: 1.12rem;
+  color: var(--color-texto, #e2e8f0);
+}
+
+.indicador-acordeon-bitacora {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.74rem;
+  color: var(--color-primario-2, #00f0ff);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.3));
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm, 2px);
+  white-space: nowrap;
+}
+
+.resumen-entrada-bitacora {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-texto-suave, #94a3b8);
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.acordeon-bitacora-cuerpo {
+  padding: 1.2rem 1.45rem 1.4rem;
+  border-top: 1px dashed var(--color-borde, rgba(56, 189, 248, 0.24));
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.15rem;
+}
+
+.bloque-detalle-bitacora,
+.bloque-aprendizaje-bitacora {
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md, 4px);
+  background: rgba(10, 17, 30, 0.75);
+  border: 1px solid var(--color-borde, rgba(56, 189, 248, 0.2));
+}
+
+.bloque-aprendizaje-bitacora {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.etiqueta-bloque-bitacora {
+  display: block;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primario-2, #00f0ff);
+  margin-bottom: 0.45rem;
+}
+
+.etiqueta-bloque-bitacora.aprendizaje {
+  color: var(--color-estado, #10b981);
+}
+
+.texto-bloque-bitacora {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--color-texto, #e2e8f0);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .barra-pestanas-servicios {
+    grid-template-columns: 1fr;
+  }
+
+  .cuerpo-seccion-servicios {
+    padding: 1.15rem;
+  }
+
+  .Resumen-perfil-github {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acordeon-bitacora-cuerpo {
+    grid-template-columns: 1fr;
+  }
+
+  .acordeon-bitacora-fila-titulo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
