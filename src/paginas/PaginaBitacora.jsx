@@ -5,7 +5,7 @@ import '../componentes/servicios/SeccionServicios.css';
 // Subcomponente AcordeonBitacora reflejado en el Árbol de Renderizado (PaginaArbol.jsx)
 export function AcordeonBitacora({ entrada, expansionForzada }) {
   const [abierto, setAbierto] = useState(
-    entrada.id === 'bit-01' || entrada.id === 'bit-05' || entrada.id === 'bit-06'
+    entrada.id === 'bit-00' || entrada.id === 'bit-01' || entrada.id === 'bit-06'
   );
 
   useEffect(() => {
@@ -98,15 +98,26 @@ export default function PaginaBitacora() {
   return (
     <div className="pagina-bitacora-contenedor">
       {/* Encabezado descriptivo alineado con el sistema visual de variables.css y global.css */}
-      <div style={{ marginBottom: '2rem' }}>
+      <div style={{ marginBottom: '1.75rem' }}>
         <p className="system-overline">200 - OK / Registro del Proceso de Ingeniería · Criterio 14</p>
         <h1 style={{ fontSize: '2.2rem', margin: '0.5rem 0', color: 'var(--color-texto, #f1f5f9)' }}>
           Bitácora de Desarrollo y Evolución TP1 → TP2
         </h1>
         <p style={{ color: 'var(--color-texto-suave, #94a3b8)', maxWidth: '820px', lineHeight: '1.65' }}>
-          Historial cronológico de decisiones arquitectónicas, dificultades técnicas superadas y aprendizajes colectivos del equipo <strong>200 - OK</strong> durante la construcción de la SPA en React. Filtra los hitos por área temática o integrante y despliega cada acordeón para inspeccionar el detalle de implementación.
+          Historial cronológico de decisiones arquitectónicas, estimación ágil, dificultades técnicas superadas y aprendizajes colectivos del equipo <strong>200 - OK</strong> durante la construcción de la SPA en React.
         </p>
       </div>
+
+      {/* Destaque metodológico: Agile Planning Poker */}
+      <section className="caja-contexto-api" aria-label="Metodología de estimación empleada">
+        <div className="contexto-api-info">
+          <span className="badge-endpoint">🃏 Metodología de Estimación: Agile Planning Poker</span>
+          <p className="texto-contexto-api">
+            Para planificar el TP2 y distribuir equitativamente sus 15 criterios de evaluación, el equipo utilizó{' '}
+            <strong>Agile Planning Poker (Scrum Poker)</strong>: una técnica de estimación ágil basada en el consenso grupal donde cada integrante vota simultáneamente la complejidad de cada historia de usuario o módulo empleando cartas con la serie de Fibonacci (<code>1, 2, 3, 5, 8, 13</code> Puntos de Historia). Al revelar las cartas al mismo tiempo se evita el sesgo de anclaje, se debaten las divergencias técnicas y se acuerda un esfuerzo realista antes de codificar.
+          </p>
+        </div>
+      </section>
 
       {/* Barra de controles: Filtros de Categoría, Autor y Expansión Global */}
       <div className="panel-controles-bitacora">

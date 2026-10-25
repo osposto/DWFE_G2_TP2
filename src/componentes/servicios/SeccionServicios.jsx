@@ -93,7 +93,7 @@ export default function SeccionServicios() {
         tabIndex={0}
       >
         {pestanaActiva === 'github' ? (
-          <PestanaGithub usuario="osposto" />
+          <PestanaGithub usuario="elgyllesoft" />
         ) : (
           <PestanaHackerNews />
         )}

@@ -1,5 +1,18 @@
 export const datosBitacora = [
   {
+    id: 'bit-00',
+    fecha: '2026-10-06',
+    titulo: 'Estimación y Distribución de Tareas mediante Agile Planning Poker',
+    autor: 'Guillermo',
+    categoria: 'Metodología Ágil y Planificación',
+    resumen:
+      'Aplicación de la técnica ágil Planning Poker (Scrum Poker) para estimar el esfuerzo de los 15 criterios de evaluación y repartir los módulos equitativamente entre los 3 integrantes.',
+    detalle:
+      '¿Qué es Agile Planning Poker? Es una técnica de estimación ágil basada en el consenso grupal (popularizada en Scrum y Extreme Programming) que utiliza cartas con valores de la secuencia de Fibonacci modificada (1, 2, 3, 5, 8, 13, 20) para asignar Puntos de Historia (Story Points) a cada requerimiento. Cada integrante evalúa la complejidad técnica de una tarea y revela su carta de forma simultánea para evitar el sesgo de anclaje; si existen diferencias entre la estimación más alta y la más baja, el equipo debate los riesgos técnicos y vuelve a votar hasta alcanzar consenso. Con este método estimamos la carga de los 6 módulos de la SPA y acordamos la división equitativa entre Orlando Sposto (Arquitectura, Sidebar, JSON y Árbol), Adriana Van Den Dooren (UI/UX, Portada y Perfiles con modales) y Guillermo Escobar (Servicios API asíncronos, Bitácora y Documentación).',
+    aprendizajes:
+      'El uso de Agile Planning Poker permitió descubrir tempranamente la complejidad oculta en tareas como las peticiones concurrentes a Hacker News (Promise.all), los tooltips fijos de la barra lateral y la accesibilidad por teclado, logrando un reparto balanceado en Puntos de Historia.'
+  },
+  {
     id: 'bit-01',
     fecha: '2026-10-08',
     titulo: 'Transición Arquitectónica del TP1 Estático hacia una SPA en React 18',
@@ -73,7 +86,7 @@ export const datosBitacora = [
     resumen:
       'Desarrollo del módulo de telemetría externa con pestañas intercambiables, peticiones concurrentes y componentes reutilizables Cargando y MensajeError.',
     detalle:
-      'La API de Hacker News entrega inicialmente solo un arreglo de IDs numéricos en topstories.json. Para evitar una cascada lenta de peticiones secuenciales, se implementó una resolución en paralelo con Promise.all sobre las historias principales. En paralelo, se integró la API de GitHub con selector rápido de nodos (@osposto, @Adriana-vandendooren, @OWASP, @mitre) y controles para refrescar datos en vivo o simular fallos HTTP, verificando en tiempo real la respuesta del componente MensajeError y su acción alReintentar.',
+      'La API de Hacker News entrega inicialmente solo un arreglo de IDs numéricos en topstories.json. Para evitar una cascada lenta de peticiones secuenciales, se implementó una resolución en paralelo con Promise.all sobre las historias principales. En paralelo, se integró la API de GitHub con selector rápido de nodos (@elgyllesoft / pfo1, @osposto, @Adriana-vandendooren, @OWASP) y controles para refrescar datos en vivo o simular fallos HTTP, verificando en tiempo real la respuesta del componente MensajeError y su acción alReintentar.',
     aprendizajes:
       'Desacoplar los estados de red (cargando, error y éxito) en componentes reutilizables (Cargando.jsx y MensajeError.jsx) mejora la experiencia de usuario y evita pantallas en blanco ante caídas de red o límites de tasa (Rate Limit 403).'
   },
