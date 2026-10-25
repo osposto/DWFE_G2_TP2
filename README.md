@@ -203,12 +203,7 @@ Cumpliendo rigurosamente con los **Criterios 15** y **03** (nivel `Propone`), se
 
 ## 📸 Capturas de Pantalla
 
-Vista general de la aplicación en funcionamiento y de las interacciones en los perfiles de integrantes (Criterio 02 - Nivel `Propone`):
+Vista general de la aplicación en funcionamiento (Criterio 02 - Nivel `Propone`):
 
-### 1. Portada del Equipo y Catálogo Interactivo
-![Portada y Buscador de Capacidades](src/assets/integrantes/capturas/portada-buscador.webp)
-
-### 2. Perfiles de Integrantes y Fichas Modales Interactivas
-| Perfil de Orlando Sposto | Perfil de Adriana Van Den Dooren | Perfil de Guillermo Escobar |
-|---|---|---|
-| ![Modal Perfil 1](src/assets/integrantes/capturas/modal-perfil-1.webp) | ![Modal Perfil 2](src/assets/integrantes/capturas/modal-perfil-2.webp) | ![Modal Perfil 3](src/assets/integrantes/capturas/modal-perfil-3.webp) |
+### Centro de Operaciones y Portada del Equipo (React SPA)
+![Centro de Operaciones y Portada del Equipo](src/assets/integrantes/capturas/captura_TP2.webp)
